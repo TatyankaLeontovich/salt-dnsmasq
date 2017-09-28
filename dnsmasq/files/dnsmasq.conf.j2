@@ -14,6 +14,10 @@ port=0
 port=53
 {%- endif %}
 
+{%- if server.get('r_address') %}
+address = {{ server.get('r_address') }}
+{%- endif %}
+
 # If you want dnsmasq to listen for DHCP and DNS requests only on
 # specified interfaces (and the loopback) give the name of the
 # interface (eg eth0) here.
