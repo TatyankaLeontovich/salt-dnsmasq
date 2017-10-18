@@ -22,8 +22,9 @@ address = {{ server.get('r_address') }}
 # specified interfaces (and the loopback) give the name of the
 # interface (eg eth0) here.
 # Repeat the line for more than one interface.
+{%- if server.get('network_interface') %}
 interface={{ server.network_interface }}
-
+{%- endif %}
 
 # On systems which support it, dnsmasq binds the wildcard address,
 # even when it is listening on only some interfaces. It then discards
